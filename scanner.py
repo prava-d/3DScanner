@@ -34,11 +34,11 @@ while 1:
 
     #parsing Arduino data
     data = ser.readline()
-    dataArray = data..split
+    dataArray = data.split().strip()
 
     # convert to floats (for precision) and radians
-	theta = ((float(dis[0])+20)*pi)/180.0
-	phi = -((float(dis[1])-92)*pi)/180.0
+	theta = ((float(dis[0]))*pi)/180.0
+	phi = ((float(dis[1]))*pi)/180.0
     # converted to actual distances with calibration
     r = float(dis[2])  *math.e(4) #put in calibration
 
