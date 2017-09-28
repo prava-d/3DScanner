@@ -44,18 +44,18 @@ void loop() {
     // delays included so it doesn't print too fast and also the servo doesn't move too fast
     for (panPos = 0; panPos <= 180; panPos+=1) {
       Serial.print(panPos);
-      Serial.print(', ');
-      delay(10);
+      Serial.print(',');
+      delay(20);
       myservoPan.write(panPos);
-      delay(10);
+      delay(20);
       
       // tilts the sensor/servo (up and down) and takes sensor readings
       for (tiltPos = 0; tiltPos <= 180; tiltPos+=1) {
         Serial.print(tiltPos);
-        Serial.print(', ');
-        delay(10);
+        Serial.print(',');
+        delay(20);
         myservoTilt.write(tiltPos);
-        delay(10);
+        delay(20);
         
         // need about 40 ms in order to accurately get the data
         data1 = analogRead(sensorPin);
@@ -67,7 +67,7 @@ void loop() {
         data4 = analogRead(sensorPin);
         delay(40);
         data5 = analogRead(sensorPin);
-        delay(10);
+        delay(20);
         
         voltage = (data1 + data2 + data3 + data4 + data5)/5  * 5.0 / 1023.0; // averages out all the data points, converts to voltage
         Serial.print(voltage);
@@ -78,12 +78,14 @@ void loop() {
       // sweeps back (didn't want the servo to move back super quick - seems bad for the system)
       for (tiltPos = 180; tiltPos >= 0; tiltPos-=1) {
         myservoTilt.write(tiltPos);
+        delay(20);
       }
     }
     
     // sweeps back for the pan mechanism insteah
     for (panPos = 180; panPos >= 0; panPos-=1) {
      myservoPan.write(panPos); 
+      delay(20);
     }
 
 }
