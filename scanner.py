@@ -37,8 +37,8 @@ while 1:
     dataArray = data.split().strip()
 
     # convert to floats (for precision) and radians
-	theta = ((float(dis[0]))*pi)/180.0
-	phi = ((float(dis[1]))*pi)/180.0
+    theta = ((float(dis[0]))*pi)/180.0
+    phi = ((float(dis[1]))*pi)/180.0
     # converted to actual distances with calibration
     r = float(dis[2])  *math.e(4) #put in calibration
 
@@ -51,13 +51,13 @@ while 1:
     if r > mindis and r < maxdis:
 
         #adds to matrices
-		x.append(xpt)
-		y.append(ypt)
-		z.append(zpt)
+	    x.append(xpt)
+	    y.append(ypt)
+	    z.append(zpt)
 
         #liveplots data
-		ax.scatter(x, y, z)	#plot point
-		plt.draw()
+	    ax.scatter(x, y, z)	#plot point
+	    plt.draw()
 
 #creats permenant plot
 plt.ioff()

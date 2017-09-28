@@ -1,0 +1,11 @@
+cali = 
+
+     General model Exp1:
+     cali(x) = a*exp(b*x)
+     Coefficients (with 95% confidence bounds):
+       a =       1.119  (1.088, 1.149)
+       b =     -0.6775  (-0.6928, -0.6623)
+
+Line of best fit
+
+Distance = 1.119*e^-0.6775(Voltage)
